@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <img class="logo" src="images/Logo-on-website_without-back.webp" alt="">
+
+    <div class="topnav" id="myTopnav">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#news">News</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+      <a href="#shop">Shop</a>
+      <a href="#mycart" class="hap">My cart</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    
+    
+    <script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+    </script>
+    
+
+    <div>
+    <img class="mySlides" src="images/21bb51_438cd6fca5804086b452aa9f787445bb_mv2.webp">
+    <img class="mySlides" src="images/21bb51_5fd7a46e07984373a40bcc1e20fa4a7a_mv2 (2).webp">
+    <img class="mySlides" src="images/21bb51_6302a46c77de482692aa6d7283cb5bfd_mv2 (2).webp">
+    <img class="mySlides" src="images/21bb51_76c7d248c63943f983f09ee1072403b8_mv2.webp">
+    <img class="mySlides" src="images/21bb51_8d119358c1034654b83bb22385e8e096_mv2.webp">
+    <img class="mySlides" src="images/21bb51_904fc6a75e274e4cb8b92e4ec860575d_mv2.webp">
+    <img class="mySlides" src="images/21bb51_c8e2e0591e1c4422b4c313ff1ea0801e_mv2.webp">
+    <img class="mySlides" src="images/21bb51_c97dcd7b7bc44e4e966726582c479771_mv2.webp">
+    <img class="mySlides" src="images/21bb51_d8f7bc5f47e34094ab24eea18fb49f15_mv2.webp">
+  </div>
+
+  
+<button onclick="plusDivs(-1)">&#10094;</button>
+<button onclick="plusDivs(1)">&#10095;</button>
+
+  
+<script>
+  var slideIndex = 1;
+  showDivs(slideIndex);
+  
+  function plusDivs(n) {
+    showDivs(slideIndex += n);
+  }
+  
+  function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    if (n > x.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = x.length}
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    x[slideIndex-1].style.display = "block";  
+  }
+  </script>
+
+  <script>
+  var myIndex = 0;
+  carousel();
+  
+  function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 4000); // Change image every 2 seconds
+  }
+  </script>
+
+<button class="open-button" onclick="openForm()">Let's Chat</button>
+
+<div class="chat-popup" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    <h1>Chat</h1>
+
+    <label for="msg"><b>Message</b></label>
+    <textarea placeholder="Type message.." name="msg" required></textarea>
+
+    <button type="submit" class="btn">Send</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+      
+
+</body>
+</html>
